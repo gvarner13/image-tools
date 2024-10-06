@@ -1,42 +1,163 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+/* @import "normalize.css"; */
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+html {
+  color-scheme: light only;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  touch-action: none;
+  font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue",
+    Helvetica, Arial, sans-serif, system-ui;
+  padding: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+body::before {
+  --line: color-mix(in lch, canvasText 25%, transparent);
+  --size: 60px;
+  content: "";
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: linear-gradient(
+        90deg,
+        var(--line) 1px,
+        transparent 1px var(--size)
+      )
+      0 -5vmin / var(--size) var(--size),
+    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0 -5vmin / var(
+        --size
+      ) var(--size);
+  mask: linear-gradient(-15deg, transparent 60%, white);
+  top: 0;
+  z-index: -1;
+}
+
+article {
+  width: 600px;
+  aspect-ratio: 2 / 1.1;
+  min-height: 330px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4em;
+  max-width: calc(100% - 2rem);
+  background: hsl(0 0% 50%);
+}
+
+article > img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
+  height: 100%;
+  width: 660px;
+  object-fit: cover;
+  object-position: center 43%;
+  user-select: none;
+  pointer-events: none;
+}
+
+:root {
+  --x: 0;
+  --y: 0;
+}
+
+article > img:first-of-type {
+  filter: saturate(1.5) brightness(0.9);
+  object-position: calc(-50% + (var(--x) * 30px)) calc(43% + (var(--y) * -20px));
+}
+
+article > img:last-of-type {
+  object-position: calc(-50% + (var(--x) * 40px)) calc(43% + (var(--y) * -40px));
+}
+
+article h3 {
+  position: absolute;
+  left: 50%;
+  top: 6%;
+  margin: 0;
+  font-size: 8rem;
+  translate: -50% 0;
+  text-transform: uppercase;
+  font-family: "Bebas Neue", sans-serif;
+  color: white;
+  translate: calc(-50% + (var(--x) * -30px)) calc(var(--y) * -20px);
 }
 
 .card {
-  padding: 2em;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-.read-the-docs {
-  color: #888;
+.content {
+  min-height: 32%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  display: grid;
+  gap: 0.2rem;
+  place-items: center;
+  align-content: center;
+  padding-bottom: 0.5rem;
+}
+
+.content svg {
+  width: 20px;
+}
+
+.content p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.content p:first-of-type::after {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  width: 6ch;
+  background: white;
+  height: 1px;
+  translate: -50% 0;
+}
+
+.content p:last-of-type {
+  opacity: 0.8;
+}
+
+/* Blurring */
+.blur {
+  position: absolute;
+  inset: 60% 0 -26% 0;
+  filter: blur(20px);
+  overflow: hidden;
+}
+
+.blur img {
+  object-position: calc(-50% + (var(--x) * 40px))
+    calc(47.5% + (var(--y) * -40px));
+  object-fit: cover;
+  left: 50%;
+  translate: -50% 0;
+  height: 330px;
+  position: absolute;
+  bottom: 25%;
+  width: 660px;
+  mask: radial-gradient(50% 100% at 50% 90%, white 50%, transparent);
+  filter: saturate(1.5) brightness(0.8);
 }
