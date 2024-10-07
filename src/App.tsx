@@ -64,21 +64,23 @@ function App() {
           </article>
         </div>
         <div style={{ width: "600px" }}>
-          {loading && <div>Loading ...</div>}
-          {blob && (
-            <article>
-              <img src={blob} alt="" />
-              <h3>{bgText}</h3>
-              <img src={noBgBlob} alt="" />
-              {/* <div className="blur">
+          <article>
+            {blob && (
+              <>
+                <img src={blob} alt="" />
+                <h3>{bgText}</h3>
+                <img src={noBgBlob} alt="" />
+              </>
+            )}
+            {loading && <div className="loading">Loading ...</div>}
+            {/* <div className="blur">
               <img
                 src="https://assets.codepen.io/605876/do-not-copy-osaka.jpeg"
                 alt=""
               />
               <div></div>
             </div> */}
-            </article>
-          )}
+          </article>
         </div>
       </div>
       <div className="card">

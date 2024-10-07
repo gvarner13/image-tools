@@ -67,6 +67,18 @@ article > img {
   pointer-events: none;
 }
 
+article > .loading {
+  position: absolute;
+  left: 50%;
+  top: 6%;
+  margin: 0;
+  font-size: 6rem;
+  translate: -50% 0;
+  text-transform: uppercase;
+  font-family: "Bebas Neue", sans-serif;
+  color: white;
+}
+
 input {
   display: flex;
   padding-top: 0.5rem;
