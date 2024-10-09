@@ -108,7 +108,6 @@ function App() {
           value={bgText}
           onChange={(e) => setBgText(e.target.value)}
         />
-        {/* {blob && <img src={blob} width={600} height={400} />} */}
       </div>
     </>
   );

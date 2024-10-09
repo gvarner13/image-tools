@@ -97,6 +97,7 @@ input {
 :root {
   --x: 0;
   --y: 0;
+  --font-size: clamp(2rem, 8vmin + 1rem, 4rem);
 }
 
 article > img:first-of-type {
