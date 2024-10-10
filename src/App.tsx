@@ -22,8 +22,12 @@ function App() {
 
   return (
     <>
-      <h1>👻 Image Tools</h1>
-      <div style={{ display: "flex" }} onPointerMove={handlePointerMove}>
+      <div>
+        <div data-split aria-hidden="true">
+          The little details that make your sites feel great. Combine sticky
+          positioning with some scroll animation. With CSS, you can do way more
+          than you think.
+        </div>
         <div>
           <article>
             <img
@@ -63,6 +67,9 @@ function App() {
             </div>
           </article>
         </div>
+      </div>
+      <h1>👻 Image Tools</h1>
+      <div style={{ display: "flex" }} onPointerMove={handlePointerMove}>
         <div style={{ width: "600px" }}>
           <article>
             {blob && (
