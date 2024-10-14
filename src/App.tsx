@@ -20,14 +20,20 @@ function App() {
     // });
   };
 
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = noBgBlob;
+    link.download = "nobg-test";
+    link.click();
+  };
+
   return (
     <>
       <h1>👻 Image Tools</h1>
       <div>
         <div data-split aria-hidden="true">
-          The little details that make your sites feel great. Combine sticky
-          positioning with some scroll animation. With CSS, you can do way more
-          than you think.
+          I built a simple paralax react component that I saw on one of the many
+          cool css examples that @Jhey has produced.
         </div>
         <div>
           <article>
@@ -115,6 +121,9 @@ function App() {
           value={bgText}
           onChange={(e) => setBgText(e.target.value)}
         />
+      </div>
+      <div>
+        <button onClick={handleDownload}>Download Image</button>
       </div>
     </>
   );
