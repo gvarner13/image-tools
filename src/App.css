@@ -55,7 +55,7 @@ article {
   position: relative;
   overflow: hidden;
   border-radius: 4em;
-  max-width: calc(100% - 2rem);
+  /* max-width: calc(100% - 2rem); */
   /* background: hsl(0 0% 50%); */
 }
 
@@ -195,12 +195,15 @@ article h3 {
   filter: saturate(1.5) brightness(0.8);
 }
 
-.cardshuffle > div:nth-child(even) {
+.cardshuffle {
   display: flex;
-  /* align-items: flex-end; */
+}
+
+/* .cardshuffle > div:nth-child(even) {
+  display: flex;
   justify-content: flex-end;
 }
 
 .cardshuffle > div:nth-child(even) article {
   transform: rotate(3deg);
-}
+} */

@@ -43,6 +43,11 @@ function App() {
               fgImage="https://assets.codepen.io/605876/do-not-copy-osaka-tower.png"
               title="Osaka"
             />
+            <ParalaxCard
+              bgImage="https://assets.codepen.io/605876/do-not-copy-osaka-sky.jpeg"
+              fgImage="https://assets.codepen.io/605876/do-not-copy-osaka-tower.png"
+              title="Osaka"
+            />
           </div>
           <div>
             <ParalaxCard
