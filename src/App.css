@@ -22,6 +22,10 @@ body {
   padding: 1rem;
 }
 
+#root {
+  max-width: 1280px;
+}
+
 body::before {
   --line: color-mix(in lch, canvasText 25%, transparent);
   --size: 60px;
