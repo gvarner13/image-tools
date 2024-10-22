@@ -4,6 +4,25 @@ import { removeBackground } from "@imgly/background-removal";
 // import gsap from "https://cdn.skypack.dev/gsap@3.12.0";
 import ExifReader from "exifreader";
 import ParalaxCard from "./components/ParalaxCard";
+import * as Slider from "@radix-ui/react-slider";
+
+const SliderDemo = ({ setXLocation, xLocation }) => (
+  <form>
+    <Slider.Root
+      className="SliderRoot"
+      value={[xLocation]}
+      max={50}
+      min={-50}
+      step={1}
+      onValueChange={(value) => setXLocation(value)}
+    >
+      <Slider.Track className="SliderTrack">
+        <Slider.Range className="SliderRange" />
+      </Slider.Track>
+      <Slider.Thumb className="SliderThumb" aria-label="Volume" />
+    </Slider.Root>
+  </form>
+);
 
 function App() {
   const [blob, setBlob] = useState("");
@@ -11,6 +30,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [bgText, setBgText] = useState("");
+  const [textXLocation, setTextXLocation] = useState(0);
 
   const handlePointerMove = (event) => {
     setPosition({ x: event.clientX, y: event.clientY });
@@ -48,7 +68,7 @@ function App() {
       </div>
       <div style={{ display: "flex" }} onPointerMove={handlePointerMove}>
         <div style={{ width: "600px" }}>
-          <article>
+          <article style={{ "--xtest": textXLocation }}>
             {blob && (
               <>
                 <img src={blob} alt="" />
@@ -66,34 +86,38 @@ function App() {
             </div> */}
           </article>
         </div>
+        <div className="card">
+          <input
+            type="file"
+            name="file"
+            id="file"
+            onChange={async (e) => {
+              setLoading(true);
+              const [file]: any = e.target.files;
+              setBlob(URL.createObjectURL(file));
+              const tags = await ExifReader.load(file);
+              console.log({ tags });
+              removeBackground(file).then((blob: Blob) => {
+                setNoBgBlob(URL.createObjectURL(blob));
+                setTimeout(() => {
+                  setLoading(false);
+                  console.log("done");
+                }, 1000);
+              });
+            }}
+          />
+          <input
+            name="myInput"
+            value={bgText}
+            onChange={(e) => setBgText(e.target.value)}
+          />
+          <SliderDemo
+            setXLocation={setTextXLocation}
+            xLocation={textXLocation}
+          />
+        </div>
       </div>
-      <div className="card">
-        <input
-          type="file"
-          name="file"
-          id="file"
-          onChange={async (e) => {
-            setLoading(true);
-            const [file]: any = e.target.files;
-            setBlob(URL.createObjectURL(file));
-            const tags = await ExifReader.load(file);
-            console.log({ tags });
-            removeBackground(file).then((blob: Blob) => {
-              setNoBgBlob(URL.createObjectURL(blob));
-              setTimeout(() => {
-                setLoading(false);
-                console.log("done");
-              }, 1000);
-            });
-          }}
-        />
-        <input
-          name="myInput"
-          value={bgText}
-          onChange={(e) => setBgText(e.target.value)}
-        />
-      </div>
-      <div>
+      <div style={{ marginBottom: "4rem" }}>
         <button onClick={handleDownload}>Download Image</button>
       </div>
     </>
