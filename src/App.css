@@ -109,7 +109,7 @@ input {
   --x: 0;
   --y: 0;
   --font-size: clamp(2rem, 6vmin + 1rem, 4rem);
-  --xtest: 0;
+  /* --xtest: 0; */
 }
 
 article > img:first-of-type {
@@ -131,14 +131,16 @@ article h3 {
   text-transform: uppercase;
   font-family: "Bebas Neue", sans-serif;
   color: white;
-  translate: calc(-50% + (var(--x) * -30px)) calc(var(--xtest) * -20px);
+  translate: calc(-50% + (var(--xtest) * -30px)) calc(var(--ytest) * -20px);
 }
 
 .card {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  align-items: center;
   margin-top: 2rem;
+  padding: 1rem;
 }
 
 .content {
@@ -236,7 +238,7 @@ article h3 {
 
 .SliderRange {
   position: absolute;
-  background-color: white;
+  background-color: #f4f4f5;
   border-radius: 9999px;
   height: 100%;
 }

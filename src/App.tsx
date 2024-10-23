@@ -31,6 +31,7 @@ function App() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [bgText, setBgText] = useState("");
   const [textXLocation, setTextXLocation] = useState(0);
+  const [textYLocation, setTextYLocation] = useState(0);
 
   const handlePointerMove = (event) => {
     setPosition({ x: event.clientX, y: event.clientY });
@@ -68,7 +69,9 @@ function App() {
       </div>
       <div style={{ display: "flex" }} onPointerMove={handlePointerMove}>
         <div style={{ width: "600px" }}>
-          <article style={{ "--xtest": textXLocation }}>
+          <article
+            style={{ "--xtest": textXLocation, "--ytest": textYLocation }}
+          >
             {blob && (
               <>
                 <img src={blob} alt="" />
@@ -115,11 +118,14 @@ function App() {
             setXLocation={setTextXLocation}
             xLocation={textXLocation}
           />
+          <SliderDemo
+            setXLocation={setTextYLocation}
+            xLocation={textYLocation}
+          />
+          <button onClick={handleDownload}>Download Image</button>
         </div>
       </div>
-      <div style={{ marginBottom: "4rem" }}>
-        <button onClick={handleDownload}>Download Image</button>
-      </div>
+      <div style={{ marginBottom: "4rem" }}></div>
     </>
   );
 }
