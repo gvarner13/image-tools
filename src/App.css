@@ -140,6 +140,8 @@ article h3 {
   gap: 1.5rem;
   align-items: center;
   margin-top: 2rem;
+  margin-right: auto;
+  margin-left: auto;
   padding: 1rem;
 }
 
@@ -207,6 +209,7 @@ article h3 {
 
 .cardshuffle {
   display: flex;
+  margin-top: 2rem;
 }
 
 /* .cardshuffle > div:nth-child(even) {

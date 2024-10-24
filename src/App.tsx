@@ -74,7 +74,11 @@ function App() {
           >
             {blob && (
               <>
-                <img src={blob} alt="" />
+                <img
+                  src={blob}
+                  alt=""
+                  // style={{ filter: "saturate(200%) grayscale(1)" }}
+                />
                 <h3>{bgText}</h3>
                 <img src={noBgBlob} alt="" />
               </>
