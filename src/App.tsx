@@ -5,6 +5,7 @@ import { removeBackground } from "@imgly/background-removal";
 import ExifReader from "exifreader";
 import ParalaxCard from "./components/ParalaxCard";
 import * as Slider from "@radix-ui/react-slider";
+import { CopyBlock, dracula } from "react-code-blocks";
 
 const SliderDemo = ({ setXLocation, xLocation }) => (
   <form>
@@ -51,21 +52,32 @@ function App() {
 
   return (
     <>
-      <h1>👻 Image Tools</h1>
-      <div>
-        <div data-split aria-hidden="true">
-          I built a simple paralax react component that I saw on one of the many
-          cool css examples that @Jhey has produced.
-        </div>
-        <div className="cardshuffle">
-          <div>
-            <ParalaxCard
-              bgImage="https://assets.codepen.io/605876/do-not-copy-osaka-sky.jpeg"
-              fgImage="https://assets.codepen.io/605876/do-not-copy-osaka-tower.png"
-              title="Osaka"
-            />
+      <div className="hero">
+        <h1>👻 Image Tools</h1>
+        <div>
+          <div data-split aria-hidden="true">
+            I built a simple paralax react component that I saw on one of the
+            many cool css examples that @Jhey has produced.
+          </div>
+          <div className="cardshuffle">
+            <div>
+              <ParalaxCard
+                bgImage="https://assets.codepen.io/605876/do-not-copy-osaka-sky.jpeg"
+                fgImage="https://assets.codepen.io/605876/do-not-copy-osaka-tower.png"
+                title="Osaka"
+              />
+            </div>
           </div>
         </div>
+      </div>
+      <div className="codeblock">
+        <CopyBlock
+          text="<div>Hey</div>"
+          language="html"
+          codeBlock
+          showLineNumbers={false}
+          theme={dracula}
+        />
       </div>
       <div style={{ display: "flex" }} onPointerMove={handlePointerMove}>
         <div style={{ width: "600px" }}>

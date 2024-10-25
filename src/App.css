@@ -212,6 +212,14 @@ article h3 {
   margin-top: 2rem;
 }
 
+.codeblock {
+  width: 50%;
+}
+
+.hero {
+  height: 100vh;
+}
+
 /* .cardshuffle > div:nth-child(even) {
   display: flex;
   justify-content: flex-end;
