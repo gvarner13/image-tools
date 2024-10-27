@@ -7,6 +7,24 @@ import ParalaxCard from "./components/ParalaxCard";
 import * as Slider from "@radix-ui/react-slider";
 import { CopyBlock, dracula } from "react-code-blocks";
 
+const testText = `type AppProps = {
+  title: string;
+  bgImage: string;
+  fgImage: string;
+};
+
+const ParalaxCard = ({ title, bgImage, fgImage }: AppProps) => {
+  return (
+    <article>
+      <img src={bgImage} alt="" />
+      <h3>{title}</h3>
+      <img src={fgImage} alt="" />
+    </article>
+  );
+};
+
+export default ParalaxCard;`;
+
 const SliderDemo = ({ setXLocation, xLocation }) => (
   <form>
     <Slider.Root
@@ -72,7 +90,7 @@ function App() {
       </div>
       <div className="codeblock">
         <CopyBlock
-          text="<div>Hey</div>"
+          text={testText}
           language="html"
           codeBlock
           showLineNumbers={false}
