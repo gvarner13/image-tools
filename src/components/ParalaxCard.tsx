@@ -25,9 +25,9 @@ const ParalaxCard = ({ title, bgImage, fgImage }: AppProps) => {
               clipRule="evenodd"
             />
           </svg>
-          <span>Osaka Castle</span>
+          <span>French Bulldog</span>
         </p>
-        <p>Osaka, Japan</p>
+        <p>Woodstock, Ga</p>
       </div>
     </article>
   );
