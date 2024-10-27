@@ -72,13 +72,13 @@ function App() {
     <>
       <div className="hero">
         <h1>👻 Image Tools</h1>
-        <div>
+        <div style={{ height: "100%" }}>
           <div data-split aria-hidden="true">
             I built a simple paralax react component that I saw on one of the
             many cool css examples that @Jhey has produced.
           </div>
           <div className="cardshuffle">
-            <div>
+            <div style={{ height: "100%" }}>
               <ParalaxCard
                 bgImage="https://assets.codepen.io/605876/do-not-copy-osaka-sky.jpeg"
                 fgImage="https://assets.codepen.io/605876/do-not-copy-osaka-tower.png"
