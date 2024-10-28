@@ -61,6 +61,7 @@ article {
   position: relative;
   overflow: hidden;
   border-radius: 4em;
+  border-radius: 1.5rem;
   /* max-width: calc(100% - 2rem); */
   /* background: hsl(0 0% 50%); */
 }
@@ -165,12 +166,12 @@ article h3 {
 .content p {
   margin: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 0.5rem;
   font-size: 1.2rem;
 }
 
-.content p:first-of-type::after {
+/* .content p:first-of-type::after {
   content: "";
   position: absolute;
   top: 1rem;
@@ -183,7 +184,7 @@ article h3 {
 
 .content p:last-of-type {
   opacity: 0.8;
-}
+} */
 
 /* Blurring */
 .blur {
@@ -209,12 +210,15 @@ article h3 {
 
 .cardshuffle {
   display: flex;
-  margin-top: 2rem;
+  justify-content: center;
+  margin-top: 4rem;
   height: 100%;
 }
 
 .codeblock {
-  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%;
 }
 
 .hero {
