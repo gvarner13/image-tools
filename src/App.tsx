@@ -87,6 +87,7 @@ function App() {
         </div>
       </div>
       <div className="codeblock">
+        <h2>Code Example</h2>
         <CopyBlock
           text={testText}
           language="html"
@@ -96,6 +97,7 @@ function App() {
         />
       </div>
       <div style={{ display: "flex" }} onPointerMove={handlePointerMove}>
+        <h2>Code 🧪</h2>
         <div style={{ width: "600px" }}>
           <article
             style={{ "--xtest": textXLocation, "--ytest": textYLocation }}
